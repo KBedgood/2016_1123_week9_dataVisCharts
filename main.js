@@ -5,7 +5,7 @@
      ------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
      angular
-          .module('crimeChicago', ['ui.router'])
+          .module('nflCrimes', ['ui.router'])
           .config(appConfig);
      /*----------------------------------------------------------------------------------------------------------------------------------------------------
      The config block of our angular module always executes before our controllers and services are instantiated 

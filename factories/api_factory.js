@@ -14,22 +14,22 @@ The FACTORY manipulates data (adding / deleting to array, marking as complete...
      'use strict';
 
      angular
-          .module('crimeChicago')
+          .module('nflCrimes')
           .factory('API', function($http) {
 
                // Get Data
-               const getChicagoData = function() {
-                    var crimeData = $http({
+               const getArrestData = function() {
+                    var arrestData = $http({
                          method: 'GET',
-                         url: 'https://data.cityofchicago.org/resource/6zsd-86xi.json'
+                         url: 'http://NflArrest.com/api/v1/crime?limit=5'
                     });
-                    return crimeData;
+                    return arrestData;
                }
 
      
 
                return {
-                    getChicagoData,
+                    getArrestData,
                }
           });
 

@@ -7,6 +7,11 @@ font-family: 'Muli', sans-serif;*/
 
 /*GLOBAL STYLES*/
 
+canvas {
+     max-width: 500px;
+     margin: 0 auto;
+}
+
 $colorDark: #393E41;
 $colorMid: #C1B8B8;
 $colorLight: #F2EAEA;

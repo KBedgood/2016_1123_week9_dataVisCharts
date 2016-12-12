@@ -19,27 +19,37 @@ Handles any interaction with the user and taking data from the factory and prese
      ------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
      angular
-          .module('crimeChicago')
+          .module('nflCrimes')
           .controller('dataController', function(API, $state) {
 
                let vm = this;
-               let promise = API.getChicagoData();
+               let promise = API.getArrestData();
 
                promise.then(function(returnedData) {
-                    console.log(returnedData);
+                    // console.log(returnedData);
+                    buildChart(returnedData);
                     // vm.returnedData = returnedData.data;
                })
                
           var buyers = document.getElementById('myChart').getContext('2d');
 
 
+//create function to actually render the chart
+var buildChart = function (tacoData){
+  // console.log(tacoData);
+  var data = [];
+  var labels = [];
+  tacoData.data.forEach(function(item){
+    labels.push(item.Category);
+    data.push(item.arrest_count);
+})
 var myChart = new Chart(buyers, {
     type: 'bar',
     data: {
-        labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+        labels: labels,
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: '# of Arrests',
+            data: data,
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -69,8 +79,10 @@ var myChart = new Chart(buyers, {
         }
     }
 });
+}
 
           })
+
 
 
 

@@ -2,6 +2,10 @@
 <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i" rel="stylesheet">
 font-family: 'Muli', sans-serif;*/
 /*GLOBAL STYLES*/
+canvas {
+  max-width: 500px;
+  margin: 0 auto; }
+
 body {
   font-family: 'Muli', sans-serif;
   background-color: #F2EAEA;
